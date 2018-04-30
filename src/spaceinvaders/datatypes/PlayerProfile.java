@@ -43,6 +43,6 @@ public class PlayerProfile {
 
     @Override
     public String toString() {
-        return String.format("%15s, %30s, %10d, %10d", gamerID, emailAddress, highScore, gamesPlayed);
+        return String.format("%-15s, %-30s, %10d, %10d", gamerID, emailAddress, highScore, gamesPlayed);
     }
 }

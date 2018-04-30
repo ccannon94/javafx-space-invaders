@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfileCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javafx-space-invaders/spaceinvaders/gui/StartMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playerProfileData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/playerProfileData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -63,11 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StartMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StartMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+            <state relative-caret-position="1282">
+              <caret line="130" column="184" selection-start-line="130" selection-start-column="184" selection-end-line="130" selection-end-column="184" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpaceInvadersIO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SpaceInvadersIO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
+            <state relative-caret-position="116">
+              <caret line="17" column="105" selection-start-line="17" selection-start-column="105" selection-end-line="17" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,8 +91,8 @@
       <file leaf-file-name="PlayerProfile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="335">
+              <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
               <folding>
                 <element signature="e#213#214#0" expanded="true" />
                 <element signature="e#243#244#0" expanded="true" />
@@ -113,8 +114,8 @@
       <file leaf-file-name="PlayerProfileCollection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfileCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="290">
+              <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
               <folding>
                 <element signature="e#191#192#0" expanded="true" />
                 <element signature="e#234#235#0" expanded="true" />
@@ -155,9 +156,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfileCollection.java" />
+        <option value="$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java" />
         <option value="$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java" />
         <option value="$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java" />
-        <option value="$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java" />
       </list>
     </option>
   </component>
@@ -376,12 +377,12 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1525106277056" duration="3487000" />
+      <workItem from="1525106277056" duration="6937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4789000" />
+    <option name="totallyTimeSpent" value="8239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -389,25 +390,25 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.328877" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30882353" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30882353" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24921875" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24921875" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39973262" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -431,6 +432,11 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -518,10 +524,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1282">
+          <caret line="130" column="184" selection-start-line="130" selection-start-column="184" selection-end-line="130" selection-end-column="184" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="335">
+          <caret line="45" column="45" lean-forward="true" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
           <folding>
             <element signature="e#213#214#0" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
@@ -539,20 +555,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/spaceinvaders/datatypes/PlayerProfileCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="290">
+          <caret line="37" column="55" lean-forward="true" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
           <folding>
             <element signature="e#191#192#0" expanded="true" />
             <element signature="e#234#235#0" expanded="true" />
@@ -570,10 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/spaceinvaders/gui/StartMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/spaceinvaders/framework/SpaceInvadersIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+        <state relative-caret-position="116">
+          <caret line="17" column="105" selection-start-line="17" selection-start-column="105" selection-end-line="17" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

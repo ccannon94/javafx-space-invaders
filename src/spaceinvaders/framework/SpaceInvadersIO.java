@@ -15,7 +15,7 @@ public class SpaceInvadersIO {
             Scanner profileReader = new Scanner(new File(filename));
             while(profileReader.hasNext()) {
                 String[] profileLine = profileReader.nextLine().split(",");
-                PlayerProfile newProfile = new PlayerProfile(profileLine[0], profileLine[1], Integer.parseInt(profileLine[2].trim()), Integer.parseInt(profileLine[3].trim()));
+                PlayerProfile newProfile = new PlayerProfile(profileLine[0].trim(), profileLine[1].trim(), Integer.parseInt(profileLine[2].trim()), Integer.parseInt(profileLine[3].trim()));
                 profiles.addPlayerProfile(newProfile);
             }
         } catch (FileNotFoundException e) {
@@ -30,6 +30,7 @@ public class SpaceInvadersIO {
             for(int i = 0; i < profiles.getNumPlayerProfiles(); i++) {
                 profileWriter.println(profiles.getPlayerProfile(i).toString());
             }
+            profileWriter.close();
         } catch (FileNotFoundException e) {
             System.err.println(String.format("Player data output could not be written to %20s", filename));
         }
