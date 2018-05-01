@@ -106,7 +106,11 @@ public class StartMenu extends Application {
                     showNewPlayerControls();
                 }else{
                     PlayerProfile selectedProfile = playerProfiles.getPlayerProfile(playerProfiles_comboBox.getSelectionModel().getSelectedIndex());
+                    playerProfiles.setActiveProfile(selectedProfile);
+                    GameStage game = new GameStage(playerProfiles, null);
                     //launch game with selected profile
+
+
                 }
             }else {
                 PlayerProfile newPlayer = new PlayerProfile(newPlayerGamerID_textField.getText(), newPlayerEmail_textField.getText());

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class PlayerProfileCollection {
     private ArrayList<PlayerProfile> profiles;
+    private PlayerProfile activeProfile;
+    private int highScore;
 
     public PlayerProfileCollection() {
         profiles = new ArrayList<>();
@@ -17,6 +19,10 @@ public class PlayerProfileCollection {
         return profiles.get(index);
     }
 
+    public int getHighScore() {
+        return highScore;
+    }
+
     public void addPlayerProfile(PlayerProfile newProfile) {
         profiles.add(newProfile);
     }
@@ -27,6 +33,21 @@ public class PlayerProfileCollection {
 
     public PlayerProfile removePlayerProfile(int index) {
         return profiles.remove(index);
+    }
+
+    public PlayerProfile getActiveProfile() {
+        return activeProfile;
+    }
+
+    public void setActiveProfile(PlayerProfile profile) {
+        this.activeProfile = profile;
+    }
+
+    public void updateHighScore(){
+        for (PlayerProfile profile : profiles){
+            if (profile.getHighScore() > highScore)
+                highScore = profile.getHighScore();
+        }
     }
 
     @Override
