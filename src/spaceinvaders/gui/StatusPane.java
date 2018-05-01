@@ -14,6 +14,7 @@ public class StatusPane extends HBox {
     private HBox livesRemainingHBox;
     private ImageView[] lifeImages;
 
+    private int livesRemaining;
 
     public StatusPane(int highScore, String goodGuyImagePath){
         scoreLabel = new Label("Score: ");
@@ -35,6 +36,7 @@ public class StatusPane extends HBox {
         lifeImages[2].setFitWidth(20.0);
         livesRemainingHBox = new HBox();
         livesRemainingHBox.getChildren().addAll(lifeImages[0], lifeImages[1], lifeImages[2]);
+        livesRemaining = 3;
 
         this.getChildren().addAll(scoreLabel, scoreValueLabel, highScoreLabel, highScoreValueLabel, livesRemainingLabel, livesRemainingHBox);
     }
@@ -42,8 +44,32 @@ public class StatusPane extends HBox {
     public void setScoreText(int score){
         scoreValueLabel.setText(score + "");
     }
-    
+
     public void setHighScoreValueLabel(int highScore){
         highScoreValueLabel.setText(highScore + "");
+    }
+
+    public int getLivesRemaining() {
+        return livesRemaining;
+    }
+
+    public int decrementLivesRemaining(){
+        switch(livesRemaining) {
+            case 3:
+                livesRemaining = 2;
+                lifeImages[2].setVisible(false);
+                return livesRemaining;
+            case 2:
+                livesRemaining = 1;
+                lifeImages[1].setVisible(false);
+                return livesRemaining;
+            case 1:
+                livesRemaining = 0;
+                lifeImages[0].setVisible(false);
+                return livesRemaining;
+            default:
+                livesRemaining = -1;
+                return livesRemaining;
+        }
     }
 }
