@@ -13,7 +13,7 @@ public class LevelOne extends Level {
     private final int levelOneBadGuysColumns = 5;
     private final int levelOneBadGuysRows = 3;
     private final int badGuysStartingX = 100;
-    private final int badGuysEndingX = 200;
+    private final int badGuysEndingX = 150;
     private final int badGuysStartingY = 50;
     private final int badGuysEndingY = 300;
 
@@ -21,7 +21,7 @@ public class LevelOne extends Level {
         badGuys = new BadGuyCraft[levelOneBadGuysRows][levelOneBadGuysColumns];
         for(int i = 1; i <= levelOneBadGuysRows; i++){
             for(int j = 1; j <= levelOneBadGuysColumns; j++){
-                badGuys[i - 1][j - 1] = new BadGuyCraft(gameData.getImagePath(GameConfigData.BAD_GUY_IMAGE_PATH_INDEX), j * badGuysStartingX, i * badGuysStartingY);
+                badGuys[i - 1][j - 1] = new BadGuyCraft(gameData.getImagePath(GameConfigData.BAD_GUY_IMAGE_PATH_INDEX), j * (badGuysStartingX-10) , i * badGuysStartingY, GameConfigData.BAD_GUY_SPEED);
                 this.getChildren().add(badGuys[i - 1][j - 1]);
             }
         }
@@ -61,5 +61,10 @@ public class LevelOne extends Level {
     @Override
     public int getBadGuysEndingY(){
         return badGuysEndingY;
+    }
+
+    @Override
+    public int getStartingNumBadGuys(){
+        return levelOneBadGuysColumns * levelOneBadGuysRows;
     }
 }

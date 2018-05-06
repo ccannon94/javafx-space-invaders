@@ -111,10 +111,9 @@ public class StartMenu extends Application {
                     PlayerProfile selectedProfile = playerProfiles.getPlayerProfile(playerProfiles_comboBox.getSelectionModel().getSelectedIndex());
                     playerProfiles.setActiveProfile(selectedProfile);
                     GameConfigData configData = SpaceInvadersIO.readGameConfigData(gameConfigDataFileName);
-                    GameStage game = new GameStage(playerProfiles, configData);
+
                     //launch game with selected profile
-
-
+                    GameStage game = new GameStage(playerProfiles, configData);
                 }
             }else {
                 PlayerProfile newPlayer = new PlayerProfile(newPlayerGamerID_textField.getText(), newPlayerEmail_textField.getText());

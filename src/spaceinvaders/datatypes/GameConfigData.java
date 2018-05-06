@@ -7,8 +7,8 @@ public class GameConfigData {
     public static final int BAD_GUY_IMAGE_PATH_INDEX = 1;
     public static final int BAD_BOSS_IMAGE_PATH_INDEX = 2;
     public static final int BACKGROUND_IMAGE_PATH_INDEX = 3;
-    public static final int BAD_GUY_SPEED = 5;
-    public static final int GOOD_GUY_SPEED = 5;
+    public static final double BAD_GUY_SPEED = 3.0;
+    public static final int GOOD_GUY_SPEED = 3;
 
 
     private String[] imagePaths;

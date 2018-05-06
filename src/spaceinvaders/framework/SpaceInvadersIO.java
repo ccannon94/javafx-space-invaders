@@ -18,6 +18,8 @@ public class SpaceInvadersIO {
                 String[] profileLine = profileReader.nextLine().split(",");
                 PlayerProfile newProfile = new PlayerProfile(profileLine[0].trim(), profileLine[1].trim(), Integer.parseInt(profileLine[2].trim()), Integer.parseInt(profileLine[3].trim()));
                 profiles.addPlayerProfile(newProfile);
+                if(newProfile.getHighScore() > profiles.getHighScore())
+                    profiles.setHighScore(newProfile.getHighScore());
             }
         } catch (FileNotFoundException e) {
             System.err.println(String.format("Player Profile data not found in %20s", filename));

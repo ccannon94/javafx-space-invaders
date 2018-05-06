@@ -41,7 +41,7 @@ public class StatusPane extends HBox {
         this.getChildren().addAll(scoreLabel, scoreValueLabel, highScoreLabel, highScoreValueLabel, livesRemainingLabel, livesRemainingHBox);
     }
 
-    public void setScoreText(int score){
+    public void setScoreValueLabel(int score){
         scoreValueLabel.setText(score + "");
     }
 

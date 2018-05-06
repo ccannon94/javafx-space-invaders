@@ -23,6 +23,10 @@ public class PlayerProfileCollection {
         return highScore;
     }
 
+    public void setHighScore(int highScore){
+        this.highScore = highScore;
+    }
+
     public void addPlayerProfile(PlayerProfile newProfile) {
         profiles.add(newProfile);
     }

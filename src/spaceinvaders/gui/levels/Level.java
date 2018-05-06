@@ -1,10 +1,7 @@
 package spaceinvaders.gui.levels;
 
 import javafx.scene.layout.Pane;
-import spaceinvaders.gui.BadGuyCraft;
-import spaceinvaders.gui.GoodGuyCraft;
-import spaceinvaders.gui.GoodGuyTorpedo;
-import spaceinvaders.gui.Torpedo;
+import spaceinvaders.gui.*;
 
 public abstract class Level extends Pane {
     protected BadGuyCraft[][] badGuys;
@@ -25,6 +22,12 @@ public abstract class Level extends Pane {
         Torpedo newTorpedo = new GoodGuyTorpedo(goodGuy.getX(), goodGuy.getY());
         this.getChildren().add(newTorpedo);
         return newTorpedo;
+    }
+
+    public Torpedo dropBomb(BadGuyCraft badGuy){
+        Torpedo newBomb = new BadGuyTorpedo(badGuy.getX(), badGuy.getY());
+        this.getChildren().add(newBomb);
+        return newBomb;
     }
 
     public void detonateTorpedo(Torpedo torpedo){
@@ -51,4 +54,6 @@ public abstract class Level extends Pane {
     public abstract int getBadGuysEndingX();
 
     public abstract int getBadGuysEndingY();
+
+    public abstract int getStartingNumBadGuys();
 }
