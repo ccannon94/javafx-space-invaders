@@ -1,0 +1,4 @@
+spaceinvaders/resources/images/goodguy.png
+spaceinvaders/resources/images/badguy.png
+spaceinvaders/resources/images/badboss.png
+spaceinvaders/resources/images/background.jpg

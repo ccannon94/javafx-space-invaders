@@ -3,33 +3,38 @@ package spaceinvaders.gui;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import spaceinvaders.datatypes.GameConfigData;
-
-import java.io.FileInputStream;
+import spaceinvaders.gui.levels.Level;
+import spaceinvaders.gui.levels.LevelOne;
 
 public class GamePane extends Pane {
-    private final int HEIGHT = 500;
-    private final int WIDTH = 500;
-    private final int BAD_GUY_COLS = 10;
+    private static final int HEIGHT = 500;
+    private static final int WIDTH = 500;
 
-    private GoodGuyCraft goodGuy;
-    private BadGuyCraft[][] badGuys;
+    private Level currentLevel;
 
     public GamePane(GameConfigData gameConfigData){
-        //need some method that will create an array of bad guys and arrange them in a grid.
-        /*int numBadGuyRows = gameConfigData.getLevelData().getLevel(0).getNumBadGuys() / BAD_GUY_COLS;
-        if(gameConfigData.getLevelData().getLevel(0).getNumBadBosses() > 0)
-            numBadGuyRows += 1;
-        badGuys = new BadGuyCraft[numBadGuyRows][BAD_GUY_COLS];
-        if(gameConfigData.getLevelData().getLevel(0).getNumBadBosses() > 0){
-            for(int i = 0; i < gameConfigData.getLevelData().getLevel(0).getNumBadBosses(); i++){
-                BossCraft newBoss = new Boss()
-            }
-        }*/
+        currentLevel = new LevelOne(gameConfigData);
 
-        goodGuy = new GoodGuyCraft("spaceinvaders/resources/images/goodguy.png", 250.0, 500.0);
-        this.getChildren().addAll(goodGuy);
+        this.getChildren().add(currentLevel);
+
         this.setPrefHeight(500);
         this.setPrefWidth(500);
+    }
+
+    public static int getGamePaneHeight(){
+        return HEIGHT;
+    }
+
+    public static int getGamePaneWidth(){
+        return WIDTH;
+    }
+
+    public Level getCurrentLevel(){
+        return currentLevel;
+    }
+
+    public void setCurrentLevel(Level newLevel){
+        currentLevel = newLevel;
     }
 
     public void setGamePaneBackground(String bgImagePath) {

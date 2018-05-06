@@ -21,6 +21,22 @@ public abstract class Craft extends ImageView {
         hitPoints = 50;
     }
 
+    public double getSpeed(){
+        return speed;
+    }
+
+    public void setSpeed(double speed){
+        this.speed = speed;
+    }
+
+    public double getDirection(){
+        return direction;
+    }
+
+    public void setDirection(double direction){
+        this.direction = direction;
+    }
+
     public void move() {
         this.setX(this.getX() + speed * Math.cos(direction * (2 * Math.PI)/360));
         this.setY(this.getY() + speed * Math.sin(direction * (2 * Math.PI)/360));

@@ -12,23 +12,9 @@ public class GameConfigData {
 
 
     private String[] imagePaths;
-    private int playAreaWidth;
-    private int playAreaHeight;
-    private LevelData levelData;
 
-    public GameConfigData(int playAreaWidth, int playAreaHeight, LevelData levelData) {
+    public GameConfigData() {
         imagePaths = new String[4];
-        this.levelData = levelData;
-        this.playAreaHeight = playAreaHeight;
-        this.playAreaWidth = playAreaWidth;
-    }
-
-    public int getPlayAreaWidth() {
-        return playAreaWidth;
-    }
-
-    public int getPlayAreaHeight() {
-        return playAreaHeight;
     }
 
     public String getImagePath(int index){
@@ -39,19 +25,11 @@ public class GameConfigData {
         imagePaths[index] = path;
     }
 
-    public LevelData getLevelData(){
-        return levelData;
-    }
-
-    public void setLevelData(LevelData levelData){
-        this.levelData = levelData;
-    }
     public String toString(){
         String returnString = "";
         for(String path : imagePaths){
             returnString += path + System.lineSeparator();
         }
-        returnString += playAreaWidth + ", " + playAreaHeight + System.lineSeparator() + levelData.toString();
         return returnString;
     }
 }

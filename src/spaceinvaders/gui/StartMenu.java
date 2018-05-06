@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import spaceinvaders.datatypes.GameConfigData;
 import spaceinvaders.datatypes.PlayerProfile;
 import spaceinvaders.datatypes.PlayerProfileCollection;
 import spaceinvaders.framework.SpaceInvadersIO;
@@ -26,9 +27,11 @@ public class StartMenu extends Application {
     private Button newPlayerRegister_button;
     private Button playerProfilesSelect_button;
     private static String playerProfileConfigFileName;
+    private static String gameConfigDataFileName;
 
     public static void main(String[] args) {
         playerProfileConfigFileName = args[0];
+        gameConfigDataFileName = args[1];
         launch(args);
     }
 
@@ -107,7 +110,8 @@ public class StartMenu extends Application {
                 }else{
                     PlayerProfile selectedProfile = playerProfiles.getPlayerProfile(playerProfiles_comboBox.getSelectionModel().getSelectedIndex());
                     playerProfiles.setActiveProfile(selectedProfile);
-                    GameStage game = new GameStage(playerProfiles, null);
+                    GameConfigData configData = SpaceInvadersIO.readGameConfigData(gameConfigDataFileName);
+                    GameStage game = new GameStage(playerProfiles, configData);
                     //launch game with selected profile
 
 
