@@ -11,7 +11,10 @@ public abstract class Level extends Pane {
     protected GoodGuyCraft goodGuy;
 
     public BadGuyCraft getBadGuyCraft(int row, int column){
-        return badGuys[row][column];
+        if(badGuys[row][column] != null)
+            return badGuys[row][column];
+        else
+            return null;
     }
 
     public GoodGuyCraft getGoodGuyCraft(){
@@ -22,6 +25,19 @@ public abstract class Level extends Pane {
         Torpedo newTorpedo = new GoodGuyTorpedo(goodGuy.getX(), goodGuy.getY());
         this.getChildren().add(newTorpedo);
         return newTorpedo;
+    }
+
+    public void detonateTorpedo(Torpedo torpedo){
+        this.getChildren().remove(torpedo);
+    }
+
+    public void killBadGuy(int row, int column){
+        if(row == 0 && column == 0){
+            badGuys[row][column].setVisible(false);
+        }else {
+            this.getChildren().remove(badGuys[row][column]);
+            badGuys[row][column] = null;
+        }
     }
 
     public abstract int getBadGuysColumns();

@@ -5,5 +5,6 @@ public class BadGuyCraft extends Craft {
         super(imageFilePath, startingX, startingY);
         this.setDirection(0.0);
         this.setSpeed(3.0);
+        this.setHitPoints(10);
     }
 }

@@ -91,71 +91,40 @@ public class GameStage extends Stage {
                 if(gamePane.getCurrentLevel().getBadGuyCraft(0,0).getDirection() == 0.0 && gamePane.getCurrentLevel().getBadGuyCraft(0,0).getX() >= gamePane.getCurrentLevel().getBadGuysStartingX() + 30.0){
                     for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++){
                         for(int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++) {
-                            gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(90.0);
+                            if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null)
+                                gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(90.0);
                         }
                     }
                 }else if(gamePane.getCurrentLevel().getBadGuyCraft(0,0).getDirection() == 90.0 && gamePane.getCurrentLevel().getBadGuyCraft(0,0).getY() >= gamePane.getCurrentLevel().getBadGuysStartingY() + 30.0){
                     for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++){
                         for(int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++) {
-                            gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(180.0);
+                            if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null)
+                                gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(180.0);
                         }
                     }
                 }else if(gamePane.getCurrentLevel().getBadGuyCraft(0,0).getDirection() == 180.0 && gamePane.getCurrentLevel().getBadGuyCraft(0,0).getX() <= gamePane.getCurrentLevel().getBadGuysStartingX()){
                     for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++){
                         for(int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++) {
-                            gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(270.0);
+                            if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null)
+                                gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(270.0);
                         }
                     }
                 }else if(gamePane.getCurrentLevel().getBadGuyCraft(0,0).getDirection() == 270.0 && gamePane.getCurrentLevel().getBadGuyCraft(0,0).getY() <= gamePane.getCurrentLevel().getBadGuysStartingY()){
                     for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++){
                         for(int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++) {
-                            gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(0.0);
+                            if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null)
+                                gamePane.getCurrentLevel().getBadGuyCraft(i,j).setDirection(0.0);
                         }
                     }
                 }
 
-
-
-
-                /*//check for collision
-                if (ball.getCenterY() - ball.getRadius() <= 0) {
-                    ball.setCenterY(ball.getRadius()+1);
-                    ball.setDirection(360 - ball.getDirection());
-                }
-
-                //check for collision
-                if (ball.getCenterY() + ball.getRadius() >= paneHeight) {
-                    ball.setCenterY(paneHeight - (ball.getRadius()+1));
-                    ball.setDirection(360 - ball.getDirection());
-                }
-
-                //check for collision
-                if (ball.getCenterX() - ball.getRadius() <= 0) {
-                    ball.setCenterX((ball.getRadius()+1));
-                    if (ball.getDirection() < 180) {
-                        ball.setDirection(90 + (90 - ball.getDirection()));
-                    }
-                    else {
-                        ball.setDirection(270 + (270 - ball.getDirection()));
-                    }
-                }
-
-                //check for collision
-                if (ball.getCenterX() + ball.getRadius() >= paneWidth) {
-                    ball.setCenterX(paneWidth - (ball.getRadius()+1));
-                    if (ball.getDirection() < 180) {
-                        ball.setDirection(90 + (90 - ball.getDirection()));
-                    }
-                    else {
-                        ball.setDirection(270 + (270 - ball.getDirection()));
-                    }
-                }*/
+                checkTorpedoCollisions();
             }
 
             previous = now;
         }
 
-        public void moveTorpedos(){
+        private void moveTorpedos(){
             for(Torpedo torpedo : firedTorpedos){
                 if(torpedo != null){
                     torpedo.move();
@@ -163,10 +132,40 @@ public class GameStage extends Stage {
             }
         }
 
-        public void moveBadGuys(){
+        private void moveBadGuys(){
             for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++){
                 for(int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++){
-                    gamePane.getCurrentLevel().getBadGuyCraft(i, j).move();
+                    if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null)
+                        gamePane.getCurrentLevel().getBadGuyCraft(i, j).move();
+                }
+            }
+        }
+
+        private void checkTorpedoCollisions(){
+            for(int k = 0; k < firedTorpedos.size(); k++){
+                Torpedo torpedo = firedTorpedos.get(k);
+                if(torpedo instanceof GoodGuyTorpedo){
+                    for(int i = 0; i < gamePane.getCurrentLevel().getBadGuysRows(); i++) {
+                        for (int j = 0; j < gamePane.getCurrentLevel().getBadGuysColumns(); j++) {
+                            if(gamePane.getCurrentLevel().getBadGuyCraft(i,j) != null) {
+                                if (torpedo.getStartX() > gamePane.getCurrentLevel().getBadGuyCraft(i, j).getX() && torpedo.getStartX() < (gamePane.getCurrentLevel().getBadGuyCraft(i, j).getX() + gamePane.getCurrentLevel().getBadGuyCraft(i, j).getFitWidth())) {
+                                    if (torpedo.getEndY() > gamePane.getCurrentLevel().getBadGuyCraft(i, j).getY() && torpedo.getEndY() < (gamePane.getCurrentLevel().getBadGuyCraft(i, j).getY() + gamePane.getCurrentLevel().getBadGuyCraft(i, j).getFitHeight())) {
+                                        gamePane.getCurrentLevel().detonateTorpedo(firedTorpedos.remove(k));
+                                        gamePane.getCurrentLevel().getBadGuyCraft(i, j).setHitPoints(gamePane.getCurrentLevel().getBadGuyCraft(i, j).getHitPoints() - 10);
+                                        if (gamePane.getCurrentLevel().getBadGuyCraft(i, j).getHitPoints() <= 0) {
+                                            gamePane.getCurrentLevel().killBadGuy(i, j);
+                                        }
+                                    } else if (torpedo.getStartX() < (gamePane.getCurrentLevel().getBadGuyCraft(i, j).getY() + gamePane.getCurrentLevel().getBadGuyCraft(i, j).getFitHeight()) && torpedo.getStartX() > gamePane.getCurrentLevel().getBadGuyCraft(i, j).getY()) {
+                                        gamePane.getCurrentLevel().detonateTorpedo(firedTorpedos.remove(k));
+                                        gamePane.getCurrentLevel().getBadGuyCraft(i, j).setHitPoints(gamePane.getCurrentLevel().getBadGuyCraft(i, j).getHitPoints() - 10);
+                                        if (gamePane.getCurrentLevel().getBadGuyCraft(i, j).getHitPoints() <= 0) {
+                                            gamePane.getCurrentLevel().killBadGuy(i, j);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
