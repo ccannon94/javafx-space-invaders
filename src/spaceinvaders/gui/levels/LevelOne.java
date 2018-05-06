@@ -10,12 +10,12 @@ import spaceinvaders.gui.GoodGuyCraft;
 
 
 public class LevelOne extends Level {
-    private static final int levelOneBadGuysColumns = 5;
-    private static final int levelOneBadGuysRows = 3;
-    private static final int badGuysStartingX = 100;
-    private static final int badGuysEndingX = 200;
-    private static final int badGuysStartingY = 50;
-    private static final int badGuysEndingY = 300;
+    private final int levelOneBadGuysColumns = 5;
+    private final int levelOneBadGuysRows = 3;
+    private final int badGuysStartingX = 100;
+    private final int badGuysEndingX = 200;
+    private final int badGuysStartingY = 50;
+    private final int badGuysEndingY = 300;
 
     public LevelOne(GameConfigData gameData) {
         badGuys = new BadGuyCraft[levelOneBadGuysRows][levelOneBadGuysColumns];
@@ -33,27 +33,33 @@ public class LevelOne extends Level {
         this.setPrefWidth(GamePane.getGamePaneWidth());
     }
 
-    public static int getLevelOneBadGuysColumns(){
+    @Override
+    public int getBadGuysColumns(){
         return levelOneBadGuysColumns;
     }
 
-    public static int getLevelOneBadGuysRows(){
+    @Override
+    public int getBadGuysRows(){
         return levelOneBadGuysRows;
     }
 
-    public  static int getLevelOneBadGuysStartingX(){
+    @Override
+    public  int getBadGuysStartingX(){
         return badGuysStartingX;
     }
 
-    public static int getLevelOneBadGuysStartingY(){
+    @Override
+    public int getBadGuysStartingY(){
         return badGuysStartingY;
     }
 
-    public static int getLevelOneBadGuysEndingX(){
+    @Override
+    public int getBadGuysEndingX(){
         return badGuysEndingX;
     }
 
-    public static int getLevelOneBadGuysEndingY(){
+    @Override
+    public int getBadGuysEndingY(){
         return badGuysEndingY;
     }
 }
