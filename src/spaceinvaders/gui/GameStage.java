@@ -131,7 +131,7 @@ public class GameStage extends Stage {
                 }else if(event.getCode().equals(KeyCode.LEFT)){
                     gamePane.getCurrentLevel().getGoodGuyCraft().setSpeed(5.0);
                     gamePane.getCurrentLevel().getGoodGuyCraft().setDirection(180.0);
-                }else if(event.getCode().equals(KeyCode.SPACE)){
+                }else if(event.getCode().equals(KeyCode.F)){
                     firedTorpedos.add(gamePane.getCurrentLevel().fireTorpedo());
                 }
             }else if(event.getEventType().equals(KeyEvent.KEY_RELEASED)){
@@ -205,7 +205,11 @@ public class GameStage extends Stage {
             if(fireInt == 5){
                 int firingShipRow = rand.nextInt(gamePane.getCurrentLevel().getBadGuysRows());
                 int firingShipColumn = rand.nextInt(gamePane.getCurrentLevel().getBadGuysColumns());
-                if(gamePane.getCurrentLevel().getBadGuyCraft(firingShipRow, firingShipColumn) != null){
+                if(firingShipRow == 0 && firingShipColumn == 0){
+                    if(gamePane.getCurrentLevel().getBadGuyCraft(firingShipRow, firingShipColumn).isVisible()){
+                        firedTorpedos.add(gamePane.getCurrentLevel().dropBomb(gamePane.getCurrentLevel().getBadGuyCraft(firingShipRow, firingShipColumn)));
+                    }
+                }else if(gamePane.getCurrentLevel().getBadGuyCraft(firingShipRow, firingShipColumn) != null){
                     firedTorpedos.add(gamePane.getCurrentLevel().dropBomb(gamePane.getCurrentLevel().getBadGuyCraft(firingShipRow, firingShipColumn)));
                 }
             }
