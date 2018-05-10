@@ -11,13 +11,7 @@ public class PlayerProfileCollection {
         profiles = new ArrayList<>();
     }
 
-    public int getNumPlayerProfiles() {
-        return profiles.size();
-    }
-
-    public PlayerProfile getPlayerProfile(int index) {
-        return profiles.get(index);
-    }
+    // TODO: Create the 5 methods required to access and mutate an ArrayList as described in the instructions
 
     public int getHighScore() {
         return highScore;
@@ -27,18 +21,6 @@ public class PlayerProfileCollection {
         this.highScore = highScore;
     }
 
-    public void addPlayerProfile(PlayerProfile newProfile) {
-        profiles.add(newProfile);
-    }
-
-    public void setPlayerProfile(int index, PlayerProfile newProfile) {
-        profiles.set(index, newProfile);
-    }
-
-    public PlayerProfile removePlayerProfile(int index) {
-        return profiles.remove(index);
-    }
-
     public PlayerProfile getActiveProfile() {
         return activeProfile;
     }
@@ -46,6 +28,8 @@ public class PlayerProfileCollection {
     public void setActiveProfile(PlayerProfile profile) {
         this.activeProfile = profile;
     }
+
+    // TODO: Create a method called updateHighScore the will check all of the high scores from each profile
 
     public void updateHighScore(){
         for (PlayerProfile profile : profiles){

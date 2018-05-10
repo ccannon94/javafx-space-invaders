@@ -14,7 +14,7 @@ public class GameConfigData {
     private String[] imagePaths;
 
     public GameConfigData() {
-        imagePaths = new String[4];
+        //TODO: Instantiate the imagePaths Array to contain 4 Strings
     }
 
     public String getImagePath(int index){

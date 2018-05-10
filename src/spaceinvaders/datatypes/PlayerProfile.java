@@ -6,16 +6,9 @@ public class PlayerProfile {
     private int highScore;
     private int gamesPlayed;
 
-    public PlayerProfile(String gamerID, String emailAddress) {
-        this.gamerID = gamerID;
-        this.emailAddress = emailAddress;
-    }
+    //TODO: Make a PlayerProfile constructor that accepts a String for gamerID and a String for emailAddress,
 
-    public PlayerProfile(String gamerID, String emailAddress, int highScore, int gamesPlayed) {
-        this(gamerID, emailAddress);
-        this.highScore = highScore;
-        this.gamesPlayed = gamesPlayed;
-    }
+    //TODO: Make a PlayerProfile constructor that accepts an argument for each property of PlayerProfile
 
     public String getGamerID() {
         return gamerID;
@@ -41,8 +34,5 @@ public class PlayerProfile {
         this.gamesPlayed = gamesPlayed;
     }
 
-    @Override
-    public String toString() {
-        return String.format("%-15s, %-30s, %10d, %10d", gamerID, emailAddress, highScore, gamesPlayed);
-    }
+    //TODO: Write a toString method that returns all of the properties of PlayerProfile in the order they are declared as comma-separated values
 }

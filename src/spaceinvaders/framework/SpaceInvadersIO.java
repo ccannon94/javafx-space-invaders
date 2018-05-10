@@ -28,31 +28,10 @@ public class SpaceInvadersIO {
     }
 
     public static void writePlayerProfiles(String filename, PlayerProfileCollection profiles) {
-        try {
-            PrintWriter profileWriter = new PrintWriter(new File(filename));
-            for(int i = 0; i < profiles.getNumPlayerProfiles(); i++) {
-                profileWriter.println(profiles.getPlayerProfile(i).toString());
-            }
-            profileWriter.close();
-        } catch (FileNotFoundException e) {
-            System.err.println(String.format("Player data output could not be written to %20s", filename));
-        }
+        //TODO: Add logic that will write the toString method of each PlayerProfile in profiles to the given file
     }
 
     public static GameConfigData readGameConfigData(String filename){
-        GameConfigData configData = new GameConfigData();
-
-        try {
-            Scanner reader = new Scanner(new File(filename));
-
-            configData.setImagePath(GameConfigData.GOOD_GUY_IMAGE_PATH_INDEX, reader.nextLine().trim());
-            configData.setImagePath(GameConfigData.BAD_GUY_IMAGE_PATH_INDEX, reader.nextLine().trim());
-            configData.setImagePath(GameConfigData.BAD_BOSS_IMAGE_PATH_INDEX, reader.nextLine().trim());
-            configData.setImagePath(GameConfigData.BACKGROUND_IMAGE_PATH_INDEX, reader.nextLine().trim());
-
-        } catch (FileNotFoundException e) {
-            System.err.println(String.format("Config Data not found in %20s", filename));
-        }
-        return configData;
+        //TODO: Add logic that will instantiate a new GameConfigData object, and read the paths from the given file and return the newly populated GameConfigData
     }
 }
