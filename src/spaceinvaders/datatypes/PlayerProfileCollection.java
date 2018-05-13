@@ -31,13 +31,6 @@ public class PlayerProfileCollection {
 
     // TODO: Create a method called updateHighScore the will check all of the high scores from each profile
 
-    public void updateHighScore(){
-        for (PlayerProfile profile : profiles){
-            if (profile.getHighScore() > highScore)
-                highScore = profile.getHighScore();
-        }
-    }
-
     @Override
     public String toString() {
         String returnString = "";
