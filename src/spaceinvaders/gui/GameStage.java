@@ -308,14 +308,15 @@ public class GameStage extends Stage {
             newGameButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-
+                    gamePane = new GamePane(gameConfigData);
+                    statusPane = new StatusPane(playerProfileCollection.getHighScore(), gameConfigData.getImagePath(GameConfigData.GOOD_GUY_IMAGE_PATH_INDEX));
                 }
             });
 
             exitButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-
+                    System.exit(0);
                 }
             });
         }

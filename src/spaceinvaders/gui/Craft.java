@@ -21,6 +21,8 @@ public abstract class Craft extends ImageView {
         hitPoints = 50;
     }
 
+    //
+
     public double getSpeed(){
         return speed;
     }
