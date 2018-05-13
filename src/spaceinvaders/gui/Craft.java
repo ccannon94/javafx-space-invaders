@@ -21,16 +21,9 @@ public abstract class Craft extends ImageView {
         hitPoints = 50;
     }
 
-    //
+    //TODO: Write the accessor method for speed. It will be called "getSpeed" and return a double
 
-    public double getSpeed(){
-        return speed;
-    }
-
-    public void setSpeed(double speed){
-        this.speed = speed;
-    }
-
+    //TODO: Write the mutator method for speed. It will be called "setSpeed" and take a double as an argument. It will not return anything
     public double getDirection(){
         return direction;
     }
@@ -39,10 +32,7 @@ public abstract class Craft extends ImageView {
         this.direction = direction;
     }
 
-    public void move() {
-        this.setX(this.getX() + speed * Math.cos(direction * (2 * Math.PI)/360));
-        this.setY(this.getY() + speed * Math.sin(direction * (2 * Math.PI)/360));
-    }
+    //TODO: Write the "move" method that will update the x and y location of the craft based off the current X and the speed in accordance with the instructions
 
     public void setHitPoints(int hitPoints){
         this.hitPoints = hitPoints;
