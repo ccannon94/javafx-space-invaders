@@ -5,7 +5,7 @@ Created by Chris Cannon
 
 ## Overview
 
-
+This is a basic JavaFX space invaders game. The code is split into three primary areas. Datatypes holds the underlying data that is used to run the game, this is basic code that holds information and provides it to the program. Framework is the code that is used to interface between the program and the computer. GUI is the graphical user interface, the code that the user interacts with directly.
 
 ## Data Types
 
