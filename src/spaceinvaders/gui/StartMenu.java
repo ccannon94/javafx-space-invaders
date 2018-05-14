@@ -30,8 +30,8 @@ public class StartMenu extends Application {
     private static String gameConfigDataFileName;
 
     public static void main(String[] args) {
-        //TODO: initialize playerProfileConfigFileName with the first command line argument
-        //TODO: initialzie gameConfigFileName with the second command line argument
+        playerProfileConfigFileName = args[0];
+        gameConfigDataFileName = args[1];
         launch(args);
     }
 
@@ -83,11 +83,19 @@ public class StartMenu extends Application {
     }
 
     public void showNewPlayerControls() {
-        //TODO: Set all new player UI components to visible
+        newPlayerGamerID_label.setVisible(true);
+        newPlayerGamerID_textField.setVisible(true);
+        newPlayerEmail_label.setVisible(true);
+        newPlayerEmail_textField.setVisible(true);
+        newPlayerRegister_button.setVisible(true);
     }
 
     public void hideNewPlayerControls() {
-        //TODO: Set all new player UI components to not visible
+        newPlayerGamerID_label.setVisible(false);
+        newPlayerGamerID_textField.setVisible(false);
+        newPlayerEmail_label.setVisible(false);
+        newPlayerEmail_textField.setVisible(false);
+        newPlayerRegister_button.setVisible(false);
     }
 
     public class StartMenuHandler implements EventHandler<ActionEvent> {
@@ -136,7 +144,12 @@ public class StartMenu extends Application {
         }
 
         private boolean validateGamerID(String gamerID) {
-            //TODO: Return false if gamerID contains a space or already exists, otherwise, return true
+            if(gamerID.contains(" "))
+                return false;
+            for(int i = 0; i < playerProfiles.getNumPlayerProfiles(); i++) {
+                if(gamerID.equals(playerProfiles.getPlayerProfile(i).getGamerID()))
+                    return false;
+            }
             return true;
         }
     }
