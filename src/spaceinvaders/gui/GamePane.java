@@ -15,19 +15,15 @@ public class GamePane extends Pane {
     public GamePane(GameConfigData gameConfigData){
         currentLevel = new LevelOne(gameConfigData);
 
-        this.getChildren().add(currentLevel);
+        //TODO: Add currentLevel to display in this pane
 
-        this.setPrefHeight(500);
-        this.setPrefWidth(500);
+        //TODO: Set the height and width of the Pane using the constants in this class
     }
 
-    public static int getGamePaneHeight(){
-        return HEIGHT;
-    }
+    //TODO: Create the accessor method for the game pane's height. It will be called getGamePaneHeight and return an int
 
-    public static int getGamePaneWidth(){
-        return WIDTH;
-    }
+    //TODO: Create the accessor method for game pane's width. It will be called getGamePaneWidth and return an int
+
 
     public Level getCurrentLevel(){
         return currentLevel;
